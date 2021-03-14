@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+} 
+@model Calculation 
+<h3 class="text-center">The results of the calculation</h3>
+<div>
+    <table class="mytable">
+       <tr>
+           <th class="mytable">Weight</th>
+           <th class="mytable">Width</th>
+           <th class="mytable">Length</th>
+           <th class="mytable">Gauge</th>
+       </tr>
+        <tr>
+            <td class="mytable">@Math.Round(Model.Weight,2,MidpointRounding.AwayFromZero)</td>
+            <td class="mytable">@Math.Round(Model.Width,5,MidpointRounding.AwayFromZero)</td>
+            <td class="mytable">@Math.Round(Model.Length,0,MidpointRounding.ToZero)</td>
+            <td class="mytable">@Math.Round(Model.Gauge,5,MidpointRounding.AwayFromZero)</td>
+        </tr>
+        
+    </table>
+    Based on a core diameter of <b>@Model.CoreThickness"</b>, the roll diameter should end at <b>@Math.Round(Model.Diameter,2,MidpointRounding.AwayFromZero)"</b>
+    </div>

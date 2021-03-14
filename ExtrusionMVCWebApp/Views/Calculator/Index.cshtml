@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Calculation
+<div class="bg-vector">
+    <h1 class="text-center underline">Extrusion Web Application</h1>
+
+<div>
+    <form asp-for="@Model" asp-action="GetAnswer" class="myform">
+        <div class="div-form-group">
+                <label class="mylable" for="weight">Weight</label>
+                <input type="number" step="0.2" name="weight" />
+        </div>
+        <div class="div-form-group">
+                <label class="mylable" for="width">Width as sheeting</label>
+                <input type="number" step=".001" name="width" />
+        </div>
+        <div class="div-form-group">
+                <label class="mylable" for="length">Length</label>
+                <input type="number" step=".001" name="length" />
+        </div>
+        <div class="div-form-group">
+                <label class="mylable" for="gauge">Gauge</label>
+                <input type="number" step=".00001" name="gauge" />
+        </div>
+        <div class="div-form-group">
+            <label class="mylable" for="TotalNumberForOrder">Total Quantity For Order</label>
+            <input type="number" name="TotalNumberForOrder" />
+        </div>
+        <div class="div-form-group">
+            <label class="mylable" for="is_Por">Por?</label>
+            <input type="checkbox" for="is_Por" name="is_Por" />
+        </div>
+        <div class="div-form-group">
+            <label class="mylable" for="NumberOnRoll">Quantity on each roll?</label>
+            <input type="number" for="NumberOnRoll" name="NumberOnRoll" />
+        </div>
+        <div class="div-form-group">
+            <label class="mylable" for="CoreThickness">Core diameter</label>
+            <input type="number" for="CoreThickness" name="CoreThickness" />
+        </div>
+        <div>
+            <button type="reset">Clear</button>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+ </div>
+</div>
