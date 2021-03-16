@@ -4,8 +4,8 @@
 @{
 } 
 @model Calculation 
-<h3 class="text-center">The results of the calculation</h3>
-<div>
+<h1 class="text-center underline page-head">Calculated Results:</h1>
+<div class="text-center">
     <table class="mytable">
        <tr>
            <th class="mytable">Weight</th>
@@ -21,5 +21,7 @@
         </tr>
         
     </table>
-    Based on a core diameter of <b>@Model.CoreThickness"</b>, the roll diameter should end at <b>@Math.Round(Model.Diameter,2,MidpointRounding.AwayFromZero)"</b>
-    </div>
+    <h4>
+        Based on a core diameter of <b>@Model.CoreThickness"</b>, the roll diameter will be <b>@Math.Round(Model.Diameter, 2, MidpointRounding.AwayFromZero)"</b>
+    </h4>
+</div>
