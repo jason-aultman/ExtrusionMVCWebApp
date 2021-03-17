@@ -6,22 +6,26 @@
 @model Calculation 
 <h1 class="text-center underline page-head">Calculated Results:</h1>
 <div class="text-center">
-    <table class="mytable">
+    <table class="mytable-2">
        <tr>
            <th class="mytable">Weight</th>
            <th class="mytable">Width</th>
            <th class="mytable">Length</th>
            <th class="mytable">Gauge</th>
+           <th class="mytable">Core Diameter</th>
+           <th class="mytable">Core Thickness</th>
+           <th class="mytable">Roll Diameter</th>
        </tr>
-        <tr>
-            <td class="mytable">@Math.Round(Model.Weight,2,MidpointRounding.AwayFromZero)</td>
-            <td class="mytable">@Math.Round(Model.Width,5,MidpointRounding.AwayFromZero)</td>
-            <td class="mytable">@Math.Round(Model.Length,0,MidpointRounding.ToZero)</td>
-            <td class="mytable">@Math.Round(Model.Gauge,5,MidpointRounding.AwayFromZero)</td>
-        </tr>
+       <tr>
+           <td class="mytable-2">@Math.Round(Model.Weight, 2, MidpointRounding.AwayFromZero)</td>
+           <td class="mytable-2">@Math.Round(Model.Width, 5, MidpointRounding.AwayFromZero)</td>
+           <td class="mytable-2">@Math.Round(Model.Length, 0, MidpointRounding.ToZero)</td>
+           <td class="mytable-2">@Math.Round(Model.Gauge, 5, MidpointRounding.AwayFromZero)</td>
+           <td class="mytable-2">@Math.Round(Model.CoreDiameter, 2, MidpointRounding.AwayFromZero)</td>
+           <td class="mytable-2">@Math.Round(Model.CoreThickness, 2, MidpointRounding.AwayFromZero)</td>
+           <td class="mytable-2">@Math.Round(Model.Diameter, 3, MidpointRounding.AwayFromZero)</td>
+       </tr>
         
     </table>
-    <h4>
-        Based on a core diameter of <b>@Model.CoreDiameter"</b>, the roll diameter will be <b>@Math.Round(Model.Diameter, 2, MidpointRounding.AwayFromZero)"</b>
-    </h4>
+   
 </div>
