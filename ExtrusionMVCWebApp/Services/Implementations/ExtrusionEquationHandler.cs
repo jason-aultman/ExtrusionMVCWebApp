@@ -62,7 +62,7 @@ namespace ExtrusionMVCWebApp.Services.Implementations
         {
             var gauge = calculation.Gauge;
             var rollLenthInInches = calculation.Length*12;
-            var coreDiameter = calculation.CoreThickness + 1.0;
+            var coreDiameter = calculation.CoreDiameter + 1.0;
             double rollDiameter = coreDiameter;
             double inchesLastTurn;
             for(double x=rollLenthInInches; x>=0; x-=inchesLastTurn)

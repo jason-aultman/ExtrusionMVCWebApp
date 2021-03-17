@@ -19,12 +19,14 @@ namespace ExtrusionMVCWebApp.Controllers
         {
             return View();
         }
-        public IActionResult GetAnswer(double weight, double width, double length, double gauge, bool is_Por, double CoreThickness)
+        public IActionResult GetAnswer(double weight, double width, double length, double gauge, bool is_Por, double coreDiameter, double coreThickness)
         {
             var calculationModel =_extrusionEquationHandler.CalculateByMissing(weight, width, length, gauge);
             calculationModel.Is_Por = is_Por;
-            calculationModel.CoreThickness = CoreThickness;
+            calculationModel.CoreDiameter = coreDiameter;
             calculationModel = _extrusionEquationHandler.CalculateRollDiameter(calculationModel);
+            calculationModel.CoreThickness = coreThickness;
+            
             return View(calculationModel);
         }
     }

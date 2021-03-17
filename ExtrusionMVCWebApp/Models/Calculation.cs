@@ -15,6 +15,12 @@ namespace ExtrusionMVCWebApp.Models
         public bool Is_Por { get; set; }
         public double TotalNumberForOrder { get; set; }
         public double Diameter { get; set; }
+        public double CoreDiameter { get; set; }
         public double CoreThickness { get; set; }
+
+       
     }
+   
+  
+   
 }

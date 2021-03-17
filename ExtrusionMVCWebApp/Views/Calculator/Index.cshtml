@@ -34,7 +34,7 @@
             <input type="number" name="TotalNumberForOrder" />
         </div>
         <div class="div-form-group">
-            <label class="mylable" for="is_Por">Por?</label>
+            <label class="mylable" for="is_Por">Bags/Sheets on a roll?</label>
             <input type="checkbox" for="is_Por" name="is_Por" />
         </div>
         <div class="div-form-group">
@@ -44,8 +44,25 @@
         </div>
     <div class="column">
         <div class="div-form-group">
-            <label class="mylable" for="CoreThickness">Core diameter</label>
-            <input type="number" for="CoreThickness" name="CoreThickness" />
+            <label class="mylable" for="layers" id="layers">Number of layers</label>
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>4</option>
+            </select>
+            <label class="mylable" for="coreDiameter" id="coreDiameter">Core diameter</label>
+            <select>
+                <option>3</option>
+                <option>6</option>
+            </select>
+            
+        </div>
+        <div>
+            <label class="mylable" for="coreThickness">Core Wall Thickness</label>
+            <select name="coreThickness" id="coreThickness">
+                <option>.25</option>
+                <option>.50</option>
+            </select>
         </div>
     </div>
    </div>
