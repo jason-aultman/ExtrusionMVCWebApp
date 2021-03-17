@@ -34,27 +34,10 @@ namespace ExtrusionMVCWebApp.Services.Implementations
             }
             return calculation;
         }
-        public Calculation CalculateByMissing(double weight, double width, double length, double gauge)
+        public Calculation CalculateByMissing(double weight, double width, double length, double gauge, double coreThickness)
         {
             var calculation = new Calculation() { Gauge = gauge, Weight = weight, Width = width, Length = length };
             calculation = this.CalculateByMissing(calculation);
-            //if (gauge == 0)
-            //{
-            //    gauge = weight * 2.5 / width / length;
-            //}
-            //else if (weight == 0)
-            //{
-            //    weight = (gauge * width * length) / 2.5;
-            //}
-            //else if (width == 0)
-            //{
-            //    width = (weight * 2.5) / (gauge * length);
-
-            //}
-            //else
-            //{
-            //    length = (weight * 2.5) / (gauge * width);
-            //}
             return (calculation);
         }
 
@@ -62,16 +45,16 @@ namespace ExtrusionMVCWebApp.Services.Implementations
         {
             var gauge = calculation.Gauge;
             var rollLenthInInches = calculation.Length*12;
-            var coreDiameter = calculation.CoreDiameter + 1.0;
+            var coreDiameter = calculation.CoreDiameter + (calculation.CoreThickness*2);
             double rollDiameter = coreDiameter;
             double inchesLastTurn;
             for(double x=rollLenthInInches; x>=0; x-=inchesLastTurn)
             {
                 rollDiameter += (gauge * 4);
                 inchesLastTurn = Math.PI * rollDiameter;
-                //rollLenthInInches -= inchesLastTurn;
+               
             }
-            //TODO implement roll diameter logic
+           
             calculation.Diameter = rollDiameter;
             return calculation;
         }

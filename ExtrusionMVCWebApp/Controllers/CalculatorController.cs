@@ -21,7 +21,7 @@ namespace ExtrusionMVCWebApp.Controllers
         }
         public IActionResult GetAnswer(double weight, double width, double length, double gauge, bool is_Por, double coreDiameter, double coreThickness)
         {
-            var calculationModel =_extrusionEquationHandler.CalculateByMissing(weight, width, length, gauge);
+            var calculationModel =_extrusionEquationHandler.CalculateByMissing(weight, width, length, gauge, coreThickness);
             calculationModel.Is_Por = is_Por;
             calculationModel.CoreDiameter = coreDiameter;
             calculationModel = _extrusionEquationHandler.CalculateRollDiameter(calculationModel);

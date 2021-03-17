@@ -36,6 +36,10 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+.calc-header{
+    font-family: 'Times New Roman', Times, serif;
+
+}
 .column {
     float: left;
     width: 33.33%;
