@@ -17,7 +17,7 @@ namespace ExtrusionMVCWebApp.Models
         public double Diameter { get; set; }
         public double CoreDiameter { get; set; }
         public double CoreThickness { get; set; }
-
+        public double Layers { get; set; }
        
     }
    

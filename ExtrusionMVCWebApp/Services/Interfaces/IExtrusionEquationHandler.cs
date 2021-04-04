@@ -8,8 +8,10 @@ namespace ExtrusionMVCWebApp.Services.Interfaces
 {
     public interface IExtrusionEquationHandler
     {
-        public Calculation CalculateByMissing(double weight, double width, double length, double gauge, double coreThickness);
+        public Calculation CalculateByMissing(double weight, double width, double length, double gauge, double coreThickness, double layers);
         public Calculation CalculateByMissing(Calculation calculation);
         public Calculation CalculateRollDiameter(Calculation calculation);
+        public Calculation CalculateRollFootageFromBags(Calculation calculation);
+        public double CalculateRollFootageFromBags(double length, double numberOfBags);
     }
 }

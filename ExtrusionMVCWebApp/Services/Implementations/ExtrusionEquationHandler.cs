@@ -34,9 +34,9 @@ namespace ExtrusionMVCWebApp.Services.Implementations
             }
             return calculation;
         }
-        public Calculation CalculateByMissing(double weight, double width, double length, double gauge, double coreThickness)
+        public Calculation CalculateByMissing(double weight, double width, double length, double gauge, double coreThickness, double layers)
         {
-            var calculation = new Calculation() { Gauge = gauge, Weight = weight, Width = width, Length = length };
+            var calculation = new Calculation() { Gauge = gauge, Weight = weight, Width = width, Length = length, Layers=layers };
             calculation = this.CalculateByMissing(calculation);
             return (calculation);
         }
@@ -45,18 +45,30 @@ namespace ExtrusionMVCWebApp.Services.Implementations
         {
             var gauge = calculation.Gauge;
             var rollLenthInInches = calculation.Length*12;
-            var coreDiameter = calculation.CoreDiameter + (calculation.CoreThickness*2);
+            var coreDiameter = calculation.CoreDiameter + (calculation.CoreThickness*calculation.Layers);
             double rollDiameter = coreDiameter;
             double inchesLastTurn;
             for(double x=rollLenthInInches; x>=0; x-=inchesLastTurn)
             {
-                rollDiameter += (gauge * 4);
+                rollDiameter += (gauge * calculation.Layers * 2);
                 inchesLastTurn = Math.PI * rollDiameter;
                
             }
            
             calculation.Diameter = rollDiameter;
             return calculation;
+        }
+
+        public Calculation CalculateRollFootageFromBags(Calculation calculation)
+        {
+            calculation.Length = this.CalculateRollFootageFromBags(calculation.Length, calculation.NumberOnRoll);
+            return calculation;
+        }
+
+        public double CalculateRollFootageFromBags(double length, double numberOfBags)
+        {
+            var rollLength = length * numberOfBags / 12;
+            return rollLength;
         }
     }
 }
