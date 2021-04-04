@@ -13,5 +13,6 @@ namespace ExtrusionMVCWebApp.Services.Interfaces
         public Calculation CalculateRollDiameter(Calculation calculation);
         public Calculation CalculateRollFootageFromBags(Calculation calculation);
         public double CalculateRollFootageFromBags(double length, double numberOfBags);
+        public Calculation CalculateFootageForGivenDiameter(double diameter, Calculation calculation);
     }
 }
