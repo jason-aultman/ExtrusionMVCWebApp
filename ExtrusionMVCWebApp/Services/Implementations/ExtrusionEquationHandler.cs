@@ -41,6 +41,16 @@ namespace ExtrusionMVCWebApp.Services.Implementations
             return (calculation);
         }
 
+        public Calculation CalculateNumberOfRolls(Calculation calculation)
+        {
+            if(calculation.Diameter==0)
+            {
+                CalculateRollDiameter(calculation);
+            }
+
+            return calculation;
+        }
+
         public Calculation CalculateRollDiameter(Calculation calculation)
         {
             var gauge = calculation.Gauge;

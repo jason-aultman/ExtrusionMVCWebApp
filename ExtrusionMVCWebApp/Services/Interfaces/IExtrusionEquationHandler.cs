@@ -11,5 +11,7 @@ namespace ExtrusionMVCWebApp.Services.Interfaces
         public Calculation CalculateByMissing(double weight, double width, double length, double gauge, double coreThickness);
         public Calculation CalculateByMissing(Calculation calculation);
         public Calculation CalculateRollDiameter(Calculation calculation);
+        public Calculation CalculateNumberOfRolls(Calculation calculation);
+
     }
 }
