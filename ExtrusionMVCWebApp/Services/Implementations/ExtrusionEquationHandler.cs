@@ -41,9 +41,22 @@ namespace ExtrusionMVCWebApp.Services.Implementations
             return (calculation);
         }
 
-        public Calculation CalculateFootageForGivenDiameter(double diameter, Calculation calculation)
+        public Calculation CalculateNumberOfRolls(Calculation calculation)
         {
-            throw new NotImplementedException();
+            if(calculation.Diameter==0)
+            {
+               calculation = CalculateRollDiameter(calculation);
+            }
+            if(calculation.Diameter<calculation.MaxDiameter && calculation.EvenRolls==false)
+            {
+                calculation.NumberOfRolls = 1;
+                return calculation;
+            }
+            //else if ()
+            //{
+
+            //}
+            return calculation;
         }
 
         public Calculation CalculateRollDiameter(Calculation calculation)
