@@ -26,6 +26,7 @@ namespace ExtrusionMVCWebApp.Controllers
             calculationModel.CoreDiameter = coreDiameter;
             calculationModel = _extrusionEquationHandler.CalculateRollDiameter(calculationModel);
             calculationModel.CoreThickness = coreThickness;
+            calculationModel = _extrusionEquationHandler.CalculateNumberOfRolls(calculationModel);
             
             return View(calculationModel);
         }

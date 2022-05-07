@@ -45,9 +45,17 @@ namespace ExtrusionMVCWebApp.Services.Implementations
         {
             if(calculation.Diameter==0)
             {
-                CalculateRollDiameter(calculation);
+               calculation = CalculateRollDiameter(calculation);
             }
+            if(calculation.Diameter<calculation.MaxDiameter && calculation.EvenRolls==false)
+            {
+                calculation.NumberOfRolls = 1;
+                return calculation;
+            }
+            //else if ()
+            //{
 
+            //}
             return calculation;
         }
 

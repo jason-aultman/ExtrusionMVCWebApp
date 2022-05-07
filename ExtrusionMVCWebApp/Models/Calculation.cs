@@ -17,7 +17,7 @@ namespace ExtrusionMVCWebApp.Models
         public double Diameter { get; set; }
         public double CoreDiameter { get; set; }
         public double CoreThickness { get; set; }
-        public double NumberOfRoll { get; set; }
+        public double NumberOfRolls { get; set; }
         public double LengthPerRoll { get; set; }
         public bool EvenRolls { get; set; }
         public double MaxDiameter { get; set; }
