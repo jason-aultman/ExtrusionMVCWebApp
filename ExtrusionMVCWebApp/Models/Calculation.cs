@@ -12,14 +12,11 @@ namespace ExtrusionMVCWebApp.Models
         public double Gauge { get; set; }
         public double Length { get; set; }
         public double NumberOnRoll { get; set; }
-        public bool Is_Por { get; set; }
         public double TotalNumberForOrder { get; set; }
         public double Diameter { get; set; }
         public double CoreDiameter { get; set; }
         public double CoreThickness { get; set; }
-        public double NumberOfRolls { get; set; }
-        public double LengthPerRoll { get; set; }
-        public bool EvenRolls { get; set; }
+        public double Layers { get; set; }
         public double MaxDiameter { get; set; }
     }
    

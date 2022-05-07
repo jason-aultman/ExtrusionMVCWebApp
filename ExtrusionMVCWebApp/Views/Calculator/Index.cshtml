@@ -35,21 +35,16 @@
             <input type="number" name="TotalNumberForOrder" />
         </div>
         <div class="div-form-group">
-            <label class="mylable" for="is_Por">Bags/Sheets on a roll?</label>
-            <input  type="checkbox" for="is_Por" name="is_Por" id="is_Por" />
-            <input  type="hidden" form="is_Por" name="is_Por" value="false" />
-        </div>
-            <div class="div-form-group">
-                <label class="mylable" for="bagLength">Length of bag/sheet</label>
-                <input type="number" for="bagLength" name="bagLength" id="bagLength" />
-            </div>
-        <div class="div-form-group">
             <label class="mylable" for="NumberOnRoll">Quantity on each roll?</label>
-            <input type="number" for="NumberOnRoll" name="NumberOnRoll" />
+            <input type="number" for="NumberOnRoll" name="NumberOnRoll" id="NumberOnRoll"/>
         </div>
         </div>
     <div class="column">
         <h2>Film Wind Information</h2>
+        <div class="div-form-group">
+            <label class="mylable" for="maxDiameter">Max Roll Diameter</label>
+            <input type="number" name="maxDiameter" id="maxDiameter" style="width:50px"/>
+        </div>
         <div class="div-form-group">
             <label class="mylable" for="layers" id="layers">Number of layers</label>
             <select name="layers" id="layers">
