@@ -5,9 +5,12 @@
 } 
 @model Calculation 
 <h1 class="text-center underline page-head">Calculated Results:</h1>
-<div class="text-center">
-    <table class="mytable-2">
-       <tr>
+<div class="text-center container">
+  <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+    <table class="table table-bordered table-hover">
+       <tr class="table-dark">
            <th class="mytable">Weight</th>
            <th class="mytable">Width</th>
            <th class="mytable">Length</th>
@@ -16,16 +19,20 @@
            <th class="mytable">Core Thickness</th>
            <th class="mytable">Roll Diameter</th>
        </tr>
-       <tr>
-           <td class="mytable-2">@Math.Round(Model.Weight, 2, MidpointRounding.AwayFromZero)</td>
-           <td class="mytable-2">@Math.Round(Model.Width, 5, MidpointRounding.AwayFromZero)</td>
-           <td class="mytable-2">@Math.Round(Model.Length, 0, MidpointRounding.ToZero)</td>
-           <td class="mytable-2">@Math.Round(Model.Gauge, 5, MidpointRounding.AwayFromZero)</td>
-           <td class="mytable-2">@Math.Round(Model.CoreDiameter, 2, MidpointRounding.AwayFromZero)</td>
-           <td class="mytable-2">@Math.Round(Model.CoreThickness, 2, MidpointRounding.AwayFromZero)</td>
-           <td class="mytable-2">@Math.Round(Model.Diameter, 3, MidpointRounding.AwayFromZero)</td>
+       <tr style="border: solid black 2px">
+           <td class="mytable-2" style="border: solid black 2px">@Math.Round(Model.Weight, 2, MidpointRounding.AwayFromZero)</td>
+           <td class="mytable-2" style="border: solid black 2px">@Math.Round(Model.Width, 5, MidpointRounding.AwayFromZero)</td>
+           <td class="mytable-2" style="border: solid black 2px">@Math.Round(Model.Length, 0, MidpointRounding.ToZero)</td>
+           <td class="mytable-2" style="border: solid black 2px">@Math.Round(Model.Gauge, 5, MidpointRounding.AwayFromZero)</td>
+           <td class="mytable-2" style="border: solid black 2px">@Math.Round(Model.CoreDiameter, 2, MidpointRounding.AwayFromZero)</td>
+           <td class="mytable-2" style="border: solid black 2px">@Math.Round(Model.CoreThickness, 2, MidpointRounding.AwayFromZero)</td>
+           <td class="mytable-2" style="border: solid black 2px">@Math.Round(Model.Diameter, 3, MidpointRounding.AwayFromZero)</td>
        </tr>
         
     </table>
+
+      </div>
+      
+  </div>
    
 </div>

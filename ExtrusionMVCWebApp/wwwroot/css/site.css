@@ -23,12 +23,9 @@ a.navbar-brand {
     padding: 10px;
 }
 .mytable-2 {
-    border: 1px solid black;
+    border: solid black 2px;
     border-collapse: collapse;
-    width: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
+   
 }
 
 /* Provide sufficient contrast against white background */
